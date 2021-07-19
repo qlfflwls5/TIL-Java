@@ -2,7 +2,7 @@
 
 > Java 기본 문법 공부 내용을 정리하는 repository
 
-#### 📘 [1회차](1.-Basic-&-Data-Type-&-Variable-&-Operator/Java_데이터타입_변수_연산자.md)
+#### 📘 [1회차](https://github.com/qlfflwls5/TIL-Java/blob/master/1.%20Basic%20%26%20Data%20Type%20%26%20Variable%20%26%20Operator/Java_%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%80%EC%9E%85_%EB%B3%80%EC%88%98_%EC%97%B0%EC%82%B0%EC%9E%90.md)
 
 1.  Java의 기본
 2.  Data Type, Variable, Operator
