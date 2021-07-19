@@ -7,23 +7,23 @@
 1.  Java의 기본
 2.  Data Type, Variable, Operator
 
-#### 📘 [2회차](./2. If & Switch & For & While/제어문_조건_반복.md)
+#### 📘 [2회차](https://github.com/qlfflwls5/TIL-Java/blob/master/2.%20If%20%26%20Switch%20%26%20For%20%26%20While/%EC%A0%9C%EC%96%B4%EB%AC%B8_%EC%A1%B0%EA%B1%B4_%EB%B0%98%EB%B3%B5.md)
 
 1.  if, switch
 2.  for, while
 
-#### 📘 [3회차](./3. Array & Scanner/Array_Scanner.md)
+#### 📘 [3회차](https://github.com/qlfflwls5/TIL-Java/blob/master/3.%20Array%20%26%20Scanner/Array_Scanner.md)
 
 1.  Array
 2.  Scanner
 
-#### 📘 [4회차](./4. Class & Object & Method/Class_Object_Method.md)
+#### 📘 [4회차](https://github.com/qlfflwls5/TIL-Java/blob/master/4.%20Class%20%26%20Object%20%26%20Method/Class_Object_Method.md)
 
 1.  Class
 2.  Object
-3.  [Method](./4. Class & Object & Method/Class_Object_Method2.md)
+3.  [Method](https://github.com/qlfflwls5/TIL-Java/blob/master/4.%20Class%20%26%20Object%20%26%20Method/Class_Object_Method2.md)
 
-#### 📘 [5회차](./5. Memory(GC) & String & Pass by Value & Package & Modifier/Memory(GC)_String_Pass by Value_Package_Modifier.md)
+#### 📘 [5회차](https://github.com/qlfflwls5/TIL-Java/tree/master/5.%20Memory(GC)%20%26%20String%20%26%20Pass%20by%20Value%20%26%20Package%20%26%20Modifier)
 
 1.  Memory(GC)
 2.  String
@@ -31,17 +31,17 @@
 4.  Package
 5.  Modifier
 
-#### 📘 [6회차](./6. Inheritance/Inheritance.md)
+#### 📘 [6회차](https://github.com/qlfflwls5/TIL-Java/blob/master/6.%20Inheritance/Inheritance.md)
 
 1.  Inheritance
 
-#### 📘 [7회차](./7. Polymorphism & Inferface & Class2/Polymorphism_Interface.md)
+#### 📘 [7회차](https://github.com/qlfflwls5/TIL-Java/blob/master/7.%20Polymorphism%20%26%20Inferface%20%26%20Class2/Polymorphism_Interface.md)
 
 1.  Polymorphism
 2.  Interface
-3.  [Class2](./7. Polymorphism & Inferface & Class2/Class2.md)
+3.  [Class2](https://github.com/qlfflwls5/TIL-Java/blob/master/7.%20Polymorphism%20%26%20Inferface%20%26%20Class2/Class2.md)
 
-#### 📘 8회차
+#### 📘 [8회차](https://github.com/qlfflwls5/TIL-Java/blob/master/8.%20Collection%20%26%20File%20IO/Collection.md)
 
 1.  Collection
 2.  File IO
