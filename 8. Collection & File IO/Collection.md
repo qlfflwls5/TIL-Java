@@ -598,4 +598,78 @@ while(itr.hasNext()) {
     }
     ```
 
-    
+<br/>
+
+<br/>
+
+### 2.7 Sort
+
+> https://docs.oracle.com/javase/8/docs/api/ java.util > (Classes) Collections
+
+PriorityQueue가 우선순위로 정렬을 하는 것이라면, 다른 Collection들은 기본적으로 들어온 순서대로 정렬이 되어 있을 것이다. 이 Collection들을 바로 정렬하는 방법은 `Collections.sort()`이다.
+
++ `static <T> void`
+
+  + ```
+    sort(List<T> list, Comparator<? super T> c)
+    Sorts the specified list according to the order induced by the specified comparator.
+    ```
+
++ `sort()`의 첫 번째 인자는 대상 Collection이고, 두 번째 인자는 Comparator Interface 구현체다. 이전의 Comparable처럼 비교를 처리하는 `compare()`가 있다.
+
++ ArrayList를 내 마음대로 정렬하려면 `Collections.sort()`를 사용하면 된다. 이때, 위에서 나온 Comparator Interface 구현체를 두 번째 인자로 넘겨줄 때 불편함이 생긴다. 따로 Comparator Interface를 implements하는 Class를 만들어야 하나? -> 아니다.
+  + 우리에게는 **Anonymous Class**가 있다. 정렬하는 시점에 두 번째 인자에서 바로 정렬 기준을 준다.
+
+```java
+// MainTest.java
+...
+List<Patient> pList = new ArrayList<>();
+pList.add(new Patient("김환자", 24));
+pList.add(new Patient("나환자", 21));
+pList.add(new Patient("당환자", 23));
+pList.add(new Patient("박환자", 22));
+pList.add(new Patient("이환자", 27));
+pList.add(new Patient("정환자", 26));
+pList.add(new Patient("장환자", 25));
+
+// 두 번째 인자가 Anonymous Class
+Collections.sort(pList, new Comparator<Patient>() {
+    @Override
+    public int compare(Patient o1, Patient o2) {
+        // 오름차순
+        return o1.getAge() - o2.getAge();
+    }
+});
+
+System.out.println();
+// for문을 통한 출력1 - 인덱싱 접근
+// Collection의 길이는 .size()를 통해 구하고, ArrayList의 인덱싱 접근은 .get(index)를 통해 한다.
+for (int i = 0; i < pList.size(); i++) {
+    System.out.println(pList.get(i));
+}
+
+System.out.println();
+// for문을 통한 출력2 - 요소 접근
+for (Patient x: pList) {
+    System.out.println(x);
+}
+
+System.out.println();
+// iterator를 이용한 출력 - .hasNext()와 .next()를 사용
+Iterator<Patient> itr = pList.iterator();
+while (itr.hasNext()) {
+    System.out.println(itr.next());
+}
+...
+```
+
+#### 2.7.1 Lambda
+
+어떤 interface가 단 한 개만의 추상 메서드를 가졌을 때, 그 interface를 **functional interface**라고 부른다. Comparable이나 Coparator가 모두 이에 해당한다. Functional interface를 구현한 객체는 **lambda**식으로 표현할 수 있다.
+
+```java
+// lambda
+Collections.sort(pList, (o1, o2) -> {
+    return o1.getAge() - o2.getAge();
+});
+```
