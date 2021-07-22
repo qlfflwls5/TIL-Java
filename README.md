@@ -44,4 +44,4 @@
 #### 📘 [8회차](https://github.com/qlfflwls5/TIL-Java/blob/master/8.%20Collection%20%26%20File%20IO/Collection.md)
 
 1.  Collection
-2.  File IO
+2.  [File IO](#https://github.com/qlfflwls5/TIL-Java/blob/master/8.%20Collection%20%26%20File%20IO/Exception_File_IO.md)
