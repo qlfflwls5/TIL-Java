@@ -321,3 +321,83 @@ public class ThreadTest {
 
 ## 4. Thread - 상태
 
+Thread 객체는 `start()` 메서드가 호출되면 **바로 실행되는 것이 아니다**. 모든 Thread는 기본적으로 서로 경쟁한다. 
+
+전체 Thread는 실행에서 종료까지 다양한 상태로 존재하게 되고, JVM은 이 상태를 이용해 전체 Thread의 실행을 제어한다.
+
++ Thread의 상태 그래프
+
+![JAVA 쓰레드란(Thread) ? - JAVA에서 멀티쓰레드 사용하기 | 기록하는 개발자](https://honbabzone.com/assets/images/post/java/thread-status.png)
+
++ 취소선이 그어져 있는 메서드는 Thread의 안정성을 해칠 위험이 있어 사용이 권장되지 않는 메서드들이다.
++ 실행 대기(Runnable) : 경쟁 대기실
++ 일시 정지 : 실행 중인 Thread가 `sleep()`이나 `join()`을 통해 일시 정지 상태로 들어간다. 이 상태가 끝나면(시간 종료, 메서드) 바로 다시 실행이 되는 것이 아니라 실행 대기로 들어간다.
++ 따라서, `sleep()`에 지정한 시간만큼 정확히 멈추고 다시 실행하지는 않는다.
+
+### 4.1 interrupt()
+
+일시 정지 상태에 있는 특정 Thread 객체를 방해하여 다시 실행 대기 상태로 이동시킬 수 있다. 특정 Thread 객체의 `interrupt()`를 호출하면 된다.
+
+```java
+// Thread Class
+public class ThreadInterrupt extends Thread{
+	int num;
+	
+	public ThreadInterrupt(int num) {
+		this.num = num;
+	}
+	
+	@Override
+	public void run() {
+		try{
+			System.out.println("Thread try start");
+			Thread.sleep(5000);
+			System.out.println("Thread try end");
+		} catch(InterruptedException e) {
+			System.out.println("Thread interrupted raised");
+		}
+		System.out.println(num);
+	}
+}
+```
+
+```java
+// Main Class
+public class ThreadInterruptTest {
+	public static void main(String[] args) {
+		ThreadInterrupt thread = new ThreadInterrupt(2021);
+		thread.start();
+		thread.interrupt();
+		
+		try {
+			Thread.sleep(3000);
+		} catch(InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println("Main Thread end");
+	}
+}
+
+
+// Thread try start
+// Thread interrupted raised
+// 2021
+
+// 3초
+
+// Main Thread end
+
+// interrupt가 안되었다면
+// Thread try start
+
+// 3초
+
+// Main Thread end
+
+// 2초
+
+// Thread try end
+// 2021
+```
+
